@@ -1,5 +1,4 @@
 package edu.gatech.oad.antlab.person;
-import java.lang.Object;
 
 /**
  *  A simple class for person 2
@@ -18,8 +17,7 @@ public class Person2 {
 	 * @param pname the person's real name
 	 */
 	 public Person2(String pname) {
-
-	 	name = pname;
+	   name = pname;
 	 }
 	/**
 	 * This method should take the string
@@ -33,14 +31,6 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-		int length = input.lenght();
-		char[length] list = new char[length];
-		list = str.toCharArray();
-		char[] n = new char[str.length()];
-		String temp = input;
-		int length = input.lenght();
-		(int) Math.random() % length;
-
 	  return null;
 	}
 	/**
