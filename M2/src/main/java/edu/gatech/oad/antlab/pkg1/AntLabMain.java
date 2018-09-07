@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:AntLabMain.java
+>>>>>>> master
 package edu.gatech.oad.antlab.pkg1;
 
 
@@ -13,6 +17,7 @@ import edu.gatech.oad.antlab.pkg2.*;
  * in the package structure
  */
  public class AntLabMain {
+<<<<<<< HEAD
     
     /**antlab11.java message class*/
     private AntLab11 ant11;
@@ -31,16 +36,41 @@ import edu.gatech.oad.antlab.pkg2.*;
     
     
     
+=======
+
+    /**antlab11.java message class*/
+    private AntLab11 ant11;
+
+    /**antlab12.java message class*/
+    private AntLab12 ant12;
+
+    /**antlab21.java message class*/
+    private AntLab21 ant21;
+
+    /**antlab22.java message class*/
+    private AntLab22 ant22;
+
+    /**antlab31 java message class which is contained in a jar resource file*/
+    private AntLab31 ant31;
+
+
+
+>>>>>>> master
     /**
      * the constructor that intializes all the helper classes
      */
     public AntLabMain () {
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> master
         ant11 = new AntLab11();
         ant12 = new AntLab12();
         ant21 = new AntLab21();
         ant22 = new AntLab22();
         ant31 = new AntLab31();
+<<<<<<< HEAD
         
         
     }
@@ -53,10 +83,25 @@ import edu.gatech.oad.antlab.pkg2.*;
     public void printOutMessage() {
         
         String toPrint = 
+=======
+
+
+    }
+
+    /**
+     * gathers a string from all the other classes and prints the message
+     * out to the console
+     *
+     */
+    public void printOutMessage() {
+
+        String toPrint =
+>>>>>>> master
             ant11.getMessage() + ant12.getMessage() + ant21.getMessage()
           + ant22.getMessage() + ant31.getMessage();
 		  //Person1 replace P1 with your name
 		  //and gburdell1 with your gt id
+<<<<<<< HEAD
 		  Person1 p1 = new Person1("P1");
 		  toPrint += p1.toString("gburdell1");
 		  //Person2 replace P2 with your name
@@ -82,10 +127,37 @@ import edu.gatech.oad.antlab.pkg2.*;
     }
      
     
+=======
+		  Person1 p1 = new Person1("Rayyan Thaaj");
+		  toPrint += p1.toString("rthaaj3");
+		  //Person2 replace P2 with your name
+		  //and gburdell with your gt id
+		  Person2 p2 = new Person2("Ahmad Agad");
+		  toPrint += p2.toString("aagad7");
+		  //Person3 replace P3 with your name
+		  //and gburdell3 with your gt id
+		  Person3 p3 = new Person3("P3");
+		  toPrint += p3.toString("sahmed83");
+                  //Person4 replace P4 with your name
+                  //and gburdell4 with your gt id
+                  Person4 p4 = new Person4("P4");
+                  toPrint += p4.toString("gburdell4");
+                  //Person5 replace P4 with your name
+                  //and gburdell5 with your gt id
+                  Person5 p5 = new Person5("Hisham Kodvavi");
+                  toPrint += p5.toString("hkodvavi3");
+        System.out.println(toPrint);
+
+
+    }
+
+
+>>>>>>> master
     /**
      * entry point for the program
      */
      public static void main(String[] args) {
+<<<<<<< HEAD
         
         new AntLabMain().printOutMessage();
         
@@ -95,3 +167,113 @@ import edu.gatech.oad.antlab.pkg2.*;
     
     
  } 
+=======
+
+        new AntLabMain().printOutMessage();
+
+     }
+
+
+
+
+ }
+=======
+package edu.gatech.oad.antlab.pkg1;
+
+
+import edu.cs2335.antlab.pkg3.*;
+import edu.gatech.oad.antlab.person.*;
+import edu.gatech.oad.antlab.pkg2.*;
+
+
+/**
+ * CS2335 Ant Lab
+ *
+ * Prints out a simple message gathered from all of the other classes
+ * in the package structure
+ */
+ public class AntLabMain {
+
+    /**antlab11.java message class*/
+    private AntLab11 ant11;
+
+    /**antlab12.java message class*/
+    private AntLab12 ant12;
+
+    /**antlab21.java message class*/
+    private AntLab21 ant21;
+
+    /**antlab22.java message class*/
+    private AntLab22 ant22;
+
+    /**antlab31 java message class which is contained in a jar resource file*/
+    private AntLab31 ant31;
+
+
+
+    /**
+     * the constructor that intializes all the helper classes
+     */
+    public AntLabMain () {
+
+        ant11 = new AntLab11();
+        ant12 = new AntLab12();
+        ant21 = new AntLab21();
+        ant22 = new AntLab22();
+        ant31 = new AntLab31();
+
+
+    }
+
+    /**
+     * gathers a string from all the other classes and prints the message
+     * out to the console
+     *
+     */
+    public void printOutMessage() {
+
+        String toPrint =
+            ant11.getMessage() + ant12.getMessage() + ant21.getMessage()
+          + ant22.getMessage() + ant31.getMessage();
+		  //Person1 replace P1 with your name
+		  //and gburdell1 with your gt id
+		  Person1 p1 = new Person1("Rayyan Thaaj");
+		  toPrint += p1.toString("rthaaj3");
+		  //Person2 replace P2 with your name
+		  //and gburdell with your gt id
+		  Person2 p2 = new Person2("Ahmad Agad");
+		  toPrint += p2.toString("aagad7");
+		  //Person3 replace P3 with your name
+		  //and gburdell3 with your gt id
+		  Person3 p3 = new Person3("Shafay Ahmed");
+		  toPrint += p3.toString("sahmed83");
+                  //Person4 replace P4 with your name
+                  //and gburdell4 with your gt id
+                  Person4 p4 = new Person4("P4");
+                  toPrint += p4.toString("gburdell4");
+                  //Person5 replace P4 with your name
+                  //and gburdell5 with your gt id
+                  Person5 p5 = new Person5("Hisham Kodvavi");
+                  toPrint += p5.toString("hkodvavi3");
+        System.out.println(toPrint);
+
+
+    }
+
+
+    /**
+     * entry point for the program
+     */
+     public static void main(String[] args) {
+
+        new AntLabMain().printOutMessage();
+
+     }
+
+
+
+
+ }
+>>>>>>> 0efe7c041a5cd342762463e29c23c46d860e3ec9:AntLabMain.java
+>>>>>>> hishamtemp:M2/src/main/java/edu/gatech/oad/antlab/pkg1/AntLabMain.java
+>>>>>>> master

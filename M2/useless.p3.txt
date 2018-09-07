@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 even still more useless info to delete
 
+=======
+even still more useless info to delete
+
+>>>>>>> master
