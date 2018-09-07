@@ -44,7 +44,7 @@ public class Person3 {
 		int size = input.length();
 		String revString = "";
 		for (int i = 0;i < size;i++) {
-			revString = input.charat(size);
+			revString = input.charAt(size);
 			size--;
 		}
 	  return null;
