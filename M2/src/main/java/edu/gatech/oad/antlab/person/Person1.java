@@ -47,4 +47,3 @@ public class Person1 {
 	}
 
 }
->>>>>>> master
