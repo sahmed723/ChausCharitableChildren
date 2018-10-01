@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">cccApp</string>
+    <string-array name="type">
+        <item>User</item>
+        <item>Location Employee</item>
+        <item>Admin</item>
+    </string-array>
 </resources>

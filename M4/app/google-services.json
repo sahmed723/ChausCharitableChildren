@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "350962107704",
+    "firebase_url": "https://donationtracker-753ff.firebaseio.com",
+    "project_id": "donationtracker-753ff",
+    "storage_bucket": "donationtracker-753ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350962107704:android:3eb1c894c24e4c3a",
+        "android_client_info": {
+          "package_name": "com.example.ahmadagad.cccapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350962107704-qds0cr5367p711r7rq6cmoosq96kam27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAQfsqtLqHVf-Piu7F916CS8xmqM7mP-g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
