@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+
 public class registration extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Button cancel;
@@ -19,6 +21,7 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
     private EditText email;
     private EditText password;
     private Spinner type;
+    private static ArrayList<User> users = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +43,13 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
 
         create.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                User newUser = new User(username.getText().toString(), password.getText().toString(), type.getSelectedItem().toString());
+                users.add(newUser);
+                System.out.println(users);
                 startActivity(new Intent(registration.this, MainActivity.class));
             }
         });
+
     }
 
     private void assign(){
@@ -52,6 +59,10 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
         cancel = (Button)findViewById(R.id.btnCancel);
         create = (Button)findViewById(R.id.btnCreate);
         type = (Spinner)findViewById(R.id.spType);
+    }
+
+    public static ArrayList<User> getUsers () {
+        return users;
     }
 
     private boolean validate(){

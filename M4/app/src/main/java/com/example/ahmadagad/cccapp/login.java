@@ -45,19 +45,20 @@ public class login extends AppCompatActivity {
     }
 
     private void checkUser(String userName, String userPassword) {
-
-        if (userName.equals("user") && userPassword.equals("pass")) {
-            login.setEnabled(true);
-            Intent intentDashboard = new Intent(login.this, dashboard.class);
-            startActivity(intentDashboard);
-        } else if (userName.equals("user") && !userPassword.equals("pass")) {
-            message.setText("Password is incorrect! Try again.");
-
-        } else if (!userName.equals("user") && userPassword.equals("pass")) {
-            message.setText("Username is incorrect! Try again.");
-        } else {
-            message.setText("Username and Password is incorrect! Try again.");
+        boolean match = false;
+            for (User item: registration.getUsers()) {
+                if (item.get_username().equals(userName)
+                        && item.get_password().equals(userPassword)) {
+                    login.setEnabled(true);
+                    Intent intentDashboard = new Intent(login.this, dashboard.class);
+                    match = true;
+                    startActivity(intentDashboard);
+                }
+            }
+            if (!match) {
+                message.setText("Username or Password is incorrect! Try again.");
+            }
         }
-    }
 }
+
 
