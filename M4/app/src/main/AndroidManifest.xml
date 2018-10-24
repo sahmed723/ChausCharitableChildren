@@ -19,6 +19,7 @@
         <activity android:name=".login" />
         <activity android:name=".dashboard" />
         <activity android:name=".registration"></activity>
+        <activity android:name=".locationDetails"></activity>
     </application>
 
 </manifest>
