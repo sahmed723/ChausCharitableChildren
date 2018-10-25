@@ -20,6 +20,7 @@ public class LocationListAdapter extends ArrayAdapter<Location> {
     private TextView nameView;
     private TextView addressView;
 
+
     public LocationListAdapter(@NonNull Context context, int resource, ArrayList<Location> objects) {
         super(context, resource, objects);
         mContext = context;

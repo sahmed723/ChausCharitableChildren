@@ -20,6 +20,9 @@
         <activity android:name=".dashboard" />
         <activity android:name=".registration"></activity>
         <activity android:name=".locationDetails"></activity>
+        <activity android:name=".addItem"></activity>
+        <activity android:name=".itemDetails"></activity>
+
     </application>
 
 </manifest>

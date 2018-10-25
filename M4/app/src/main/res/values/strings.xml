@@ -5,4 +5,12 @@
         <item>Location Employee</item>
         <item>Admin</item>
     </string-array>
+    <string-array name="Item">
+        <item>Clothing</item>
+        <item>Hat</item>
+        <item>Kitchen</item>
+        <item>Electronics</item>
+        <item>Household</item>
+        <item>Other</item>
+    </string-array>
 </resources>

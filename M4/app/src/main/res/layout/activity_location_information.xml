@@ -24,7 +24,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/typeText"
+            android:id="@+id/txtShort"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/locationNameText"
@@ -33,19 +33,19 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/addressText"
+            android:id="@+id/txtFull"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/typeText"
+            android:layout_below="@id/txtShort"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="20dp"
             android:text="Address:" />
 
         <TextView
-            android:id="@+id/coordinatesText"
+            android:id="@+id/txtValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/addressText"
+            android:layout_below="@+id/txtFull"
             android:layout_marginLeft="15dp"
             android:text="Coordinates:" />
 
@@ -53,9 +53,17 @@
             android:id="@+id/phoneText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/coordinatesText"
+            android:layout_below="@+id/txtValue"
             android:layout_marginLeft="15dp"
             android:text="Phone number:" />
+
+        <ListView
+            android:id="@+id/itemList"
+            android:layout_width="match_parent"
+            android:layout_height="339dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="150dp" />
     </RelativeLayout>
 
 </RelativeLayout>

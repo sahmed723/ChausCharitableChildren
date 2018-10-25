@@ -16,6 +16,7 @@ public class login extends AppCompatActivity {
     private TextView message;
     private Button login;
     private Button cancel;
+    private static String userType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class login extends AppCompatActivity {
                 if (item.get_username().equals(userName)
                         && item.get_password().equals(userPassword)) {
                     login.setEnabled(true);
+                    userType = item.get_userType();
                     Intent intentDashboard = new Intent(login.this, dashboard.class);
                     match = true;
                     startActivity(intentDashboard);
@@ -58,6 +60,9 @@ public class login extends AppCompatActivity {
             if (!match) {
                 message.setText("Username or Password is incorrect! Try again.");
             }
+        }
+        public static String getUserType() {
+            return userType;
         }
 }
 

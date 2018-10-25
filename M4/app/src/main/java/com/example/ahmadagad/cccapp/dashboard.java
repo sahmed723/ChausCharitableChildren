@@ -20,14 +20,19 @@ import java.util.ArrayList;
 
 public class dashboard extends AppCompatActivity {
 
+
     private Button logout;
-    private ArrayList<Location> locations;
+    private Button add;
+    private static ArrayList<Location> locations;
     private ListView locationList;
+    private String currentUser;
+    public static ArrayList<item> itemsList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        currentUser = login.getUserType();
 
         logout = (Button)findViewById(R.id.btnLogout);
 
@@ -36,6 +41,19 @@ public class dashboard extends AppCompatActivity {
                 logout.setEnabled(true);
                 Intent intent = new Intent(dashboard.this, MainActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        add = (Button)findViewById(R.id.btnaddItem);
+        add.setEnabled(false);
+        if(currentUser.equals("Location Employee")) {
+            add.setEnabled(true);
+        }
+
+        add.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent2 = new Intent(dashboard.this, addItem.class);
+                startActivity(intent2);
             }
         });
 
@@ -50,21 +68,26 @@ public class dashboard extends AppCompatActivity {
         locationList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), locationDetails.class);
-                intent.putExtra("name", locations.get(position).getName());
-                intent.putExtra("type", locations.get(position).getType());
-                intent.putExtra("address", "Address: " + locations.get(position).
+                Intent intent3 = new Intent(getApplicationContext(), locationDetails.class);
+                intent3.putExtra("name", locations.get(position).getName());
+                intent3.putExtra("type", locations.get(position).getType());
+                intent3.putExtra("address", "Address: " + locations.get(position).
                         getStreetAddress() + ", " + locations.get(position).getCity() + ", " +
                         locations.get(position).getZip());
-                intent.putExtra("phone", "Phone: " + locations.get(position).getPhoneNumber());
-                intent.putExtra("coordinates", "Coordinates: (" + Double.toString(
+                intent3.putExtra("phone", "Phone: " + locations.get(position).getPhoneNumber());
+                intent3.putExtra("coordinates", "Coordinates: (" + Double.toString(
                         locations.get(position).getLatitude()) + ", " + Double.toString(
                         locations.get(position).getLongitude()) + ")");
-                startActivity(intent);
+                startActivity(intent3);
             }
         });
     }
-
+    public static ArrayList<Location> getArray() {
+        return locations;
+    }
+//    public static ArrayList<item> getItemsList() {
+//        return itemsList;
+//    }
     private void getLocationData() {
         InputStream instream = getResources().openRawResource(R.raw.locationdata);
         BufferedReader reader = new BufferedReader(
