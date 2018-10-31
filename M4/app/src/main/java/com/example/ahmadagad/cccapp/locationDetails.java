@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static com.example.ahmadagad.cccapp.dashboard.itemsList;
+
 public class locationDetails extends AppCompatActivity {
 
         private TextView locationTitle;
@@ -18,7 +20,7 @@ public class locationDetails extends AppCompatActivity {
         private TextView locationCoordinates;
         private TextView locationAddress;
         private TextView locationPhone;
-        private ListView itemList;
+        private ListView itemList2;
 
 
         @Override
@@ -41,7 +43,7 @@ public class locationDetails extends AppCompatActivity {
             locationAddress.setText(intent.getStringExtra("address"));
             locationPhone.setText(intent.getStringExtra("phone"));
 
-            ArrayList<item> newArray = dashboard.itemsList;
+            ArrayList<item> newArray = itemsList;
             ArrayList<String> mainArray = new ArrayList<>();
             final ArrayList<item> sideArray = new ArrayList<>();
 
@@ -53,11 +55,11 @@ public class locationDetails extends AppCompatActivity {
                 }
             }
 
-                    itemList = (ListView) findViewById(R.id.itemList);
+                    itemList2 = (ListView) findViewById(R.id.itemList);
                     ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mainArray);
-                    itemList.setAdapter(adapter);
+                    itemList2.setAdapter(adapter);
 
-            itemList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            itemList2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent intent3 = new Intent(getApplicationContext(), itemDetails.class);

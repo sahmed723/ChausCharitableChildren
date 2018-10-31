@@ -22,6 +22,9 @@
         <activity android:name=".locationDetails"></activity>
         <activity android:name=".addItem"></activity>
         <activity android:name=".itemDetails"></activity>
+        <activity android:name=".search"></activity>
+        <activity android:name=".results"></activity>
+
 
     </application>
 

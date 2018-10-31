@@ -23,6 +23,7 @@ public class dashboard extends AppCompatActivity {
 
     private Button logout;
     private Button add;
+    private Button search;
     private static ArrayList<Location> locations;
     private ListView locationList;
     private String currentUser;
@@ -33,6 +34,17 @@ public class dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         currentUser = login.getUserType();
+
+
+        search = (Button)findViewById(R.id.btnSearch);
+
+        search.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                search.setEnabled(true);
+                Intent intent = new Intent(dashboard.this, search.class);
+                startActivity(intent);
+            }
+        });
 
         logout = (Button)findViewById(R.id.btnLogout);
 
