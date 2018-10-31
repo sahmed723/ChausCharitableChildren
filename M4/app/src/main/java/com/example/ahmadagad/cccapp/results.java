@@ -111,6 +111,8 @@ public class results extends AppCompatActivity implements AdapterView.OnItemSele
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, sideList);
         itemList3.setAdapter(adapter);
 
+
+
         final ArrayList<item> finalMainList = mainList;
         itemList3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
