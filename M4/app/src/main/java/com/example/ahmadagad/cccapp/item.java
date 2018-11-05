@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 public class item {
     String _time;
-    String _shortD;
+    public String _shortD;
     String _fullD;
     String _value;
     String _itemType;
@@ -18,6 +18,9 @@ public class item {
         _value = value;
         _itemType = itemType;
         _location = location;
+
+    }
+    public item() {
 
     }
 

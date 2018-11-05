@@ -10,7 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Spinner;
 import java.util.ArrayList;
-
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class addItem extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -23,12 +24,14 @@ public class addItem extends AppCompatActivity implements AdapterView.OnItemSele
     private TextView value;
     private Spinner location;
     private Spinner itemType;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_additem);
 
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         time = (EditText)findViewById(R.id.tTime);
         shortD = (EditText)findViewById(R.id.txtShort);
         fullD = (EditText)findViewById(R.id.txtFull);
@@ -55,7 +58,7 @@ public class addItem extends AppCompatActivity implements AdapterView.OnItemSele
         add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 item newitem = new item(time.getText().toString(), shortD.getText().toString(),fullD.getText().toString(), value.getText().toString(), itemType.getSelectedItem().toString(),location.getSelectedItem().toString());
-                dashboard.itemsList.add(newitem);
+                mDatabase.child("Items").child(shortD.getText().toString()).setValue(newitem);
                 Intent intent2 = new Intent(addItem.this, dashboard.class);
                 startActivity(intent2);
             }

@@ -47,7 +47,8 @@ public class login extends AppCompatActivity {
 
     private void checkUser(String userName, String userPassword) {
         boolean match = false;
-            for (User item: registration.getUsers()) {
+
+            for (User item : MainActivity.users2) {
                 if (item.get_username().equals(userName)
                         && item.get_password().equals(userPassword)) {
                     login.setEnabled(true);

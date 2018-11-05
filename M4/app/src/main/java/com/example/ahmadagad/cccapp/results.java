@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.ahmadagad.cccapp.Models.Location;
 
@@ -129,6 +130,10 @@ public class results extends AppCompatActivity implements AdapterView.OnItemSele
                 startActivity(intent32);
             }
         });
+
+        if (sideList.isEmpty()) {
+            Toast.makeText(this,"No items found.", Toast.LENGTH_SHORT).show();
+        }
 
 
 

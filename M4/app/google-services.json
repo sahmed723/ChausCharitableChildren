@@ -1,27 +1,35 @@
 {
   "project_info": {
-    "project_number": "350962107704",
-    "firebase_url": "https://donationtracker-753ff.firebaseio.com",
-    "project_id": "donationtracker-753ff",
-    "storage_bucket": "donationtracker-753ff.appspot.com"
+    "project_number": "390306616478",
+    "firebase_url": "https://donation-28a28.firebaseio.com",
+    "project_id": "donation-28a28",
+    "storage_bucket": "donation-28a28.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:350962107704:android:3eb1c894c24e4c3a",
+        "mobilesdk_app_id": "1:390306616478:android:3eb1c894c24e4c3a",
         "android_client_info": {
           "package_name": "com.example.ahmadagad.cccapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "350962107704-qds0cr5367p711r7rq6cmoosq96kam27.apps.googleusercontent.com",
+          "client_id": "390306616478-nmupr0dvg9c7vc0foi1nejdsoje0dvg1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ahmadagad.cccapp",
+            "certificate_hash": "2838f3a93ba37fc305b50df60e332b2d66aab400"
+          }
+        },
+        {
+          "client_id": "390306616478-pvcodk02du056ane1jj191rvu8u862s6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCAQfsqtLqHVf-Piu7F916CS8xmqM7mP-g"
+          "current_key": "AIzaSyAg6LS20aBwJgku6vt4xro5IajvoyAtAs0"
         }
       ],
       "services": {
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390306616478-pvcodk02du056ane1jj191rvu8u862s6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
