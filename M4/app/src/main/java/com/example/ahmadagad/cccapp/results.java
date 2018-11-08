@@ -27,9 +27,9 @@ public class results extends AppCompatActivity implements AdapterView.OnItemSele
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        String locat = search.loc;
-        String cata = search.cat;
-        String nam = search.name;
+        String locat = search.getLoc();
+        String cata = search.getCat();
+        String nam = search.getName();
 
         Collection<item> newList = new ArrayList<>();
 

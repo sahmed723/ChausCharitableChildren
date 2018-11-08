@@ -37,7 +37,6 @@ public class dashboard extends AppCompatActivity {
     private Button search;
     private static ArrayList<Location> locations;
     private static List<item> itemsList;
-    private DatabaseReference iData;
     private Button map;
 
 
@@ -46,7 +45,7 @@ public class dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        iData = FirebaseDatabase.getInstance().getReference("Items");
+        DatabaseReference iData = FirebaseDatabase.getInstance().getReference("Items");
 
 
         String currentUser = login.getUserType();
@@ -147,6 +146,10 @@ public class dashboard extends AppCompatActivity {
     public static ArrayList<Location> getArray() {
         return locations;
     }
+
+    /**
+     * @return item list
+     */
     public static Collection<item> getItemsList() {
         return itemsList;
     }

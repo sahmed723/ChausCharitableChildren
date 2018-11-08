@@ -24,9 +24,30 @@ public class search extends AppCompatActivity implements AdapterView.OnItemSelec
     private Spinner location;
     private Spinner itemType;
     private EditText itemName;
-    public static String loc;
-    public static String cat;
-    public static String name;
+    private static String loc;
+    private static String cat;
+    private static String name;
+
+    /**
+     * @return getter for location
+     */
+    public static String getLoc() {
+        return loc;
+    }
+
+    /**
+     * @return getter for category
+     */
+    public static String getCat() {
+        return cat;
+    }
+
+    /**
+     * @return getter for name
+     */
+    public static String getName() {
+        return name;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

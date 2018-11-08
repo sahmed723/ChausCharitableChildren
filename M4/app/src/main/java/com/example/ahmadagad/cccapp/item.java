@@ -5,7 +5,7 @@ package com.example.ahmadagad.cccapp;
  */
 class item {
     String _time;
-    public String _shortD;
+    String _shortD;
     String _fullD;
     String _value;
     String _itemType;

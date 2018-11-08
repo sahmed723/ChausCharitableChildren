@@ -1,6 +1,7 @@
 package com.example.ahmadagad.cccapp;
 
 //import android.location.Location;
+import android.os.Build;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import com.example.ahmadagad.cccapp.Models.Location;
@@ -12,9 +13,10 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.CameraUpdate;
+
+import java.util.Objects;
 
 /**
  * main class
@@ -29,7 +31,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Objects.requireNonNull(mapFragment).getMapAsync(this);
+        }
     }
 
 
@@ -44,11 +48,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        GoogleMap mMap = googleMap;
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
         for (Location loc: dashboard.getArray()) {
             builder.include (new LatLng(loc.getLatitude(),loc.getLongitude()));
-            Marker test = mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.
+            googleMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.
                     defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)).
                     position(new LatLng(loc.getLatitude(),loc.getLongitude())).
                     title(loc.getName()).snippet("Phone Number: " + loc.getPhoneNumber()));

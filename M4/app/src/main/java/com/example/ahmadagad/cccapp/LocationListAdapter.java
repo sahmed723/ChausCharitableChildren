@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Objects;
 
 import com.example.ahmadagad.cccapp.Models.Location;
 
@@ -32,12 +33,27 @@ class LocationListAdapter extends ArrayAdapter<Location> {
     }
     @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        String name = getItem(position).getName();
-        String city = getItem(position).getCity();
-        String address = getItem(position).getStreetAddress();
-        String zip = getItem(position).getZip();
-        String state = getItem(position).getState();
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+        String name = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            name = Objects.requireNonNull(getItem(position)).getName();
+        }
+        String city = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            city = Objects.requireNonNull(getItem(position)).getCity();
+        }
+        String address = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            address = Objects.requireNonNull(getItem(position)).getStreetAddress();
+        }
+        String zip = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            zip = Objects.requireNonNull(getItem(position)).getZip();
+        }
+        String state = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            state = Objects.requireNonNull(getItem(position)).getState();
+        }
 
         String total = String.format("%s, %s, %s %s", address, city, state, zip);
 

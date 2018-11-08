@@ -26,8 +26,14 @@ public class MainActivity extends AppCompatActivity {
 
     private Button login;
     private Button registration;
-    public static List<User> users2;
-    private DatabaseReference mData;
+    private static List<User> users2;
+
+    /**
+     * @return getter for user
+     */
+    public static List<User> getUsers2() {
+        return users2;
+    }
 
 
     @Override
@@ -37,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        mData = FirebaseDatabase.getInstance().getReference("User");
+        DatabaseReference mData = FirebaseDatabase.getInstance().getReference("User");
 
         login = findViewById(R.id.btnLogin);
         registration = findViewById(R.id.btnRegistration);
@@ -78,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 }
