@@ -21,8 +21,6 @@ public class addItem extends AppCompatActivity implements AdapterView.OnItemSele
 
     private TextView time;
     private TextView shortD;
-    private Button add;
-    private Button cancel;
     private TextView fullD;
     private TextView value;
     private Spinner location;
@@ -41,8 +39,8 @@ public class addItem extends AppCompatActivity implements AdapterView.OnItemSele
         value = (EditText)findViewById(R.id.txtValue);
         itemType = findViewById(R.id.spItem);
         location = findViewById(R.id.spLocation);
-        add = findViewById(R.id.btnAdd);
-        cancel = findViewById(R.id.btnCancel);
+        Button add = findViewById(R.id.btnAdd);
+        Button cancel = findViewById(R.id.btnCancel);
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(

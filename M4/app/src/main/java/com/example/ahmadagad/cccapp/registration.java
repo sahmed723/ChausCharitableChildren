@@ -78,26 +78,30 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    /**
-     * @return list of users
-     */
-    public static ArrayList<User> getUsers () {
-        return MainActivity.users2;
-    }
+// --Commented out by Inspection START (11/8/18, 12:39 PM):
+//    /**
+//     * @return list of users
+//     */
+//    public static ArrayList<User> getUsers () {
+//        return MainActivity.users2;
+//    }
+// --Commented out by Inspection STOP (11/8/18, 12:39 PM)
 
-    private boolean validate(){
-        Boolean result = false;
-        String name = username.getText().toString();
-        String em = email.getText().toString();
-        String pass = password.getText().toString();
-
-        if (name.isEmpty() || em.isEmpty() || pass.isEmpty()) {
-            Toast.makeText(this,"Please fill in all the information", Toast.LENGTH_SHORT).show();
-        } else {
-            result = true;
-        }
-        return result;
-    }
+// --Commented out by Inspection START (11/8/18, 12:39 PM):
+//    private boolean validate(){
+//        Boolean result = false;
+//        String name = username.getText().toString();
+//        String em = email.getText().toString();
+//        String pass = password.getText().toString();
+//
+//        if (name.isEmpty() || em.isEmpty() || pass.isEmpty()) {
+//            Toast.makeText(this,"Please fill in all the information", Toast.LENGTH_SHORT).show();
+//        } else {
+//            result = true;
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (11/8/18, 12:39 PM)
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

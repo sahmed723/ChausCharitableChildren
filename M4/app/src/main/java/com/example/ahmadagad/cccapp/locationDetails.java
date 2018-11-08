@@ -13,32 +13,25 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.ahmadagad.cccapp.dashboard.itemsList;
+//import static com.example.ahmadagad.cccapp.dashboard.itemsList;
 
 /**
  * main class
  */
 public class locationDetails extends AppCompatActivity {
 
-        private TextView locationTitle;
-        private TextView locationType;
-        private TextView locationCoordinates;
-        private TextView locationAddress;
-        private TextView locationPhone;
-        private ListView itemList2;
 
-
-        @Override
+    @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_location_information);
 
 
-            locationTitle = findViewById(R.id.locationNameText);
-            locationType = findViewById(R.id.txtShort);
-            locationCoordinates = findViewById(R.id.txtValue);
-            locationAddress = findViewById(R.id.txtFull);
-            locationPhone = findViewById(R.id.phoneText);
+        TextView locationTitle = findViewById(R.id.locationNameText);
+        TextView locationType = findViewById(R.id.txtShort);
+        TextView locationCoordinates = findViewById(R.id.txtValue);
+        TextView locationAddress = findViewById(R.id.txtFull);
+        TextView locationPhone = findViewById(R.id.phoneText);
 
 
             Intent intent = getIntent();
@@ -48,7 +41,7 @@ public class locationDetails extends AppCompatActivity {
             locationAddress.setText(intent.getStringExtra("address"));
             locationPhone.setText(intent.getStringExtra("phone"));
 
-            Iterable<item> newArray = itemsList;
+            Iterable<item> newArray = dashboard.getItemsList();
             ArrayList<String> mainArray = new ArrayList<>();
             final List<item> sideArray = new ArrayList<>();
 
@@ -60,7 +53,7 @@ public class locationDetails extends AppCompatActivity {
                 }
             }
 
-                    itemList2 = findViewById(R.id.itemList);
+        ListView itemList2 = findViewById(R.id.itemList);
                     ListAdapter adapter = new ArrayAdapter(this,
                             android.R.layout.simple_list_item_1, mainArray);
                     itemList2.setAdapter(adapter);

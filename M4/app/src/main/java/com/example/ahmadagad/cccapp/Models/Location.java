@@ -23,42 +23,46 @@ public class Location {
         //empty Location instance created
     }
 
-    /**
-     * @param key of location
-     * @param name of location
-     * @param latitude of location
-     * @param longitude of location
-     * @param streetAddress of location
-     * @param city of location
-     * @param state of location
-     * @param zip of location
-     * @param type of location
-     * @param phone of location
-     * @param website of location
-     */
-    public Location(int key, String name, double latitude, double longitude,
-                    String streetAddress, String city, String state,
-                    String zip, String type, String phone,
-                    String website) {
-        this.key = key;
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.streetAddress = streetAddress;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-        this.type = type;
-        this.phone = phone;
-        this.website = website;
-    }
+// --Commented out by Inspection START (11/8/18, 12:39 PM):
+//    /**
+//     * @param key of location
+//     * @param name of location
+//     * @param latitude of location
+//     * @param longitude of location
+//     * @param streetAddress of location
+//     * @param city of location
+//     * @param state of location
+//     * @param zip of location
+//     * @param type of location
+//     * @param phone of location
+//     * @param website of location
+//     */
+//    public Location(int key, String name, double latitude, double longitude,
+//                    String streetAddress, String city, String state,
+//                    String zip, String type, String phone,
+//                    String website) {
+//        this.key = key;
+//        this.name = name;
+//        this.latitude = latitude;
+//        this.longitude = longitude;
+//        this.streetAddress = streetAddress;
+//        this.city = city;
+//        this.state = state;
+//        this.zip = zip;
+//        this.type = type;
+//        this.phone = phone;
+//        this.website = website;
+//    }
+// --Commented out by Inspection STOP (11/8/18, 12:39 PM)
 
-    /**
-     * @return getter for key
-     */
-    public int getKey() {
-        return key;
-    }
+// --Commented out by Inspection START (11/8/18, 12:39 PM):
+//    /**
+//     * @return getter for key
+//     */
+//    public int getKey() {
+//        return key;
+//    }
+// --Commented out by Inspection STOP (11/8/18, 12:39 PM)
 
     /**
      * @param key setter
@@ -193,12 +197,14 @@ public class Location {
         this.phone = phoneNumber;
     }
 
-    /**
-     * @return getter for website
-     */
-    public String getWebsite() {
-        return website;
-    }
+// --Commented out by Inspection START (11/8/18, 12:39 PM):
+//    /**
+//     * @return getter for website
+//     */
+//    public String getWebsite() {
+//        return website;
+//    }
+// --Commented out by Inspection STOP (11/8/18, 12:39 PM)
 
     /**
      * @param website setter for website

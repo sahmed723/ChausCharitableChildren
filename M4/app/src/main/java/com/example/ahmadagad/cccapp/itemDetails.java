@@ -10,26 +10,19 @@ import android.widget.TextView;
  */
 public class itemDetails extends AppCompatActivity {
 
-        private TextView itemLocation;
-        private TextView itemShort;
-        private TextView itemFull;
-        private TextView itemValue;
-        private TextView itemTime;
-        private TextView itemType;
 
-
-        @Override
+    @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_item_information);
 
 
-            itemLocation = findViewById(R.id.txtLocation);
-            itemShort = findViewById(R.id.txtShort);
-            itemFull = findViewById(R.id.txtFull);
-            itemValue = findViewById(R.id.txtValue);
-            itemTime = findViewById(R.id.txtTime);
-            itemType = findViewById(R.id.txtType);
+        TextView itemLocation = findViewById(R.id.txtLocation);
+        TextView itemShort = findViewById(R.id.txtShort);
+        TextView itemFull = findViewById(R.id.txtFull);
+        TextView itemValue = findViewById(R.id.txtValue);
+        TextView itemTime = findViewById(R.id.txtTime);
+        TextView itemType = findViewById(R.id.txtType);
 
 
             Intent intent = getIntent();

@@ -23,6 +23,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -33,13 +34,10 @@ public class dashboard extends AppCompatActivity {
 
 
     private Button logout;
-    private Button add;
     private Button search;
-    public static ArrayList<Location> locations;
-    private ListView locationList;
-    private String currentUser;
-    public static List<item> itemsList;
-    DatabaseReference iData;
+    private static ArrayList<Location> locations;
+    private static List<item> itemsList;
+    private DatabaseReference iData;
     private Button map;
 
 
@@ -51,8 +49,7 @@ public class dashboard extends AppCompatActivity {
         iData = FirebaseDatabase.getInstance().getReference("Items");
 
 
-
-        currentUser = login.getUserType();
+        String currentUser = login.getUserType();
 
         map = findViewById(R.id.btnMap);
         map.setOnClickListener(new View.OnClickListener() {
@@ -86,9 +83,9 @@ public class dashboard extends AppCompatActivity {
             }
         });
 
-        add = findViewById(R.id.btnaddItem);
+        Button add = findViewById(R.id.btnaddItem);
         add.setEnabled(false);
-        if(currentUser.equals("Location Employee") || currentUser.equals("Admin")) {
+        if("Location Employee".equals(currentUser) || "Admin".equals(currentUser)) {
             add.setEnabled(true);
         }
 
@@ -104,7 +101,7 @@ public class dashboard extends AppCompatActivity {
 
         getLocationData();
 
-        locationList = findViewById(R.id.locationList);
+        ListView locationList = findViewById(R.id.locationList);
         ListAdapter adapter = new LocationListAdapter(this, R.layout.layout_item_list,
                 locations);
         locationList.setAdapter(adapter);
@@ -150,9 +147,9 @@ public class dashboard extends AppCompatActivity {
     public static ArrayList<Location> getArray() {
         return locations;
     }
-//    public static ArrayList<item> getItemsList() {
-//        return itemsList;
-//    }
+    public static Collection<item> getItemsList() {
+        return itemsList;
+    }
     private void getLocationData() {
         InputStream instream = getResources().openRawResource(R.raw.locationdata);
         BufferedReader reader = new BufferedReader(

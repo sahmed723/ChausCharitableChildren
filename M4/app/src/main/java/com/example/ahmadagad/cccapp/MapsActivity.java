@@ -21,8 +21,6 @@ import com.google.android.gms.maps.CameraUpdate;
  */
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +44,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        GoogleMap mMap = googleMap;
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
-        for (Location loc: dashboard.locations) {
+        for (Location loc: dashboard.getArray()) {
             builder.include (new LatLng(loc.getLatitude(),loc.getLongitude()));
             Marker test = mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.
                     defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)).

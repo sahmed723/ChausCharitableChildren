@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import static com.example.ahmadagad.cccapp.dashboard.itemsList;
+//import static com.example.ahmadagad.cccapp.dashboard.itemsList;
 
 
 /**
@@ -22,28 +22,23 @@ import static com.example.ahmadagad.cccapp.dashboard.itemsList;
  */
 public class results extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private ListView itemList3;
-    private String locat;
-    private String cata;
-    private String nam;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        locat = search.loc;
-        cata = search.cat;
-        nam = search.name;
+        String locat = search.loc;
+        String cata = search.cat;
+        String nam = search.name;
 
         Collection<item> newList = new ArrayList<>();
 
-        newList.addAll(itemsList);
+        newList.addAll(dashboard.getItemsList());
 
         List<item> mainList = new ArrayList<>();
         ArrayList<String> sideList = new ArrayList<>();
 
-        if (locat.equals("Location Name: All Locations")) {
+        if ("Location Name: All Locations".equals(locat)) {
             for(item i: newList) {
                 sideList.add(i._shortD);
                 mainList.add(i);
@@ -65,7 +60,7 @@ public class results extends AppCompatActivity implements AdapterView.OnItemSele
         sideList = new ArrayList<>();
 
 
-        if (cata.equals("All Items")) {
+        if ("All Items".equals(cata)) {
             for(item i: newList) {
                 sideList.add(i._shortD);
                 mainList.add(i);
@@ -103,7 +98,7 @@ public class results extends AppCompatActivity implements AdapterView.OnItemSele
         }
 
 
-        itemList3 = findViewById(R.id.lvitemList);
+        ListView itemList3 = findViewById(R.id.lvitemList);
         ListAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,
                 sideList);
         itemList3.setAdapter(adapter);

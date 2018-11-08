@@ -15,11 +15,9 @@ import com.example.ahmadagad.cccapp.Models.Location;
 /**
  * main class
  */
-public class LocationListAdapter extends ArrayAdapter<Location> {
-    private Context mContext;
-    private int mResource;
-    private TextView nameView;
-    private TextView addressView;
+class LocationListAdapter extends ArrayAdapter<Location> {
+    private final Context mContext;
+    private final int mResource;
 
 
     /**
@@ -46,8 +44,8 @@ public class LocationListAdapter extends ArrayAdapter<Location> {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View convertView1 = inflater.inflate(mResource, parent, false);
 
-        nameView = convertView1.findViewById(R.id.locationName);
-        addressView = convertView1.findViewById(R.id.locationAddress);
+        TextView nameView = convertView1.findViewById(R.id.locationName);
+        TextView addressView = convertView1.findViewById(R.id.locationAddress);
         nameView.setText(name);
         addressView.setText(total);
         return convertView1;

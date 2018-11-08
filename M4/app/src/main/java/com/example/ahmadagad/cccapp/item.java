@@ -3,7 +3,7 @@ package com.example.ahmadagad.cccapp;
 /**
  * main class
  */
-public class item {
+class item {
     String _time;
     public String _shortD;
     String _fullD;

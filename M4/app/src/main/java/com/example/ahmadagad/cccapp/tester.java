@@ -14,8 +14,7 @@ import java.util.ArrayList;
 public class tester extends AppCompatActivity {
 
 
-        private ListView usList;
-        ArrayList<String> nList = new ArrayList<>();
+    private final ArrayList<String> nList = new ArrayList<>();
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +23,12 @@ public class tester extends AppCompatActivity {
 
 
 
-            for (item u: dashboard.itemsList) {
+            for (item u: dashboard.getItemsList()) {
                 nList.add(u._shortD);
             }
 
 
-                    usList = findViewById(R.id.test);
+            ListView usList = findViewById(R.id.test);
                     ListAdapter adapter = new ArrayAdapter(this,
                             android.R.layout.simple_list_item_1, nList);
                     usList.setAdapter(adapter);

@@ -3,8 +3,8 @@ package com.example.ahmadagad.cccapp;
 /**
  * main class
  */
-public class User {
-    public String _username;
+class User {
+    private String _username;
     private String _password;
     private String _userType;
     private String _email;
@@ -51,12 +51,14 @@ public class User {
         return _userType;
     }
 
-    /**
-     * @return email of user
-     */
-    public String get_email() {
-        return _email;
-    }
+// --Commented out by Inspection START (11/8/18, 12:39 PM):
+//    /**
+//     * @return email of user
+//     */
+//    public String get_email() {
+//        return _email;
+//    }
+// --Commented out by Inspection STOP (11/8/18, 12:39 PM)
 
     /**
      * @return username of user

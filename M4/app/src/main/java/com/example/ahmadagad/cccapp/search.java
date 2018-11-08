@@ -24,8 +24,6 @@ public class search extends AppCompatActivity implements AdapterView.OnItemSelec
     private Spinner location;
     private Spinner itemType;
     private EditText itemName;
-    private Button find;
-    private Button cancel;
     public static String loc;
     public static String cat;
     public static String name;
@@ -37,8 +35,8 @@ public class search extends AppCompatActivity implements AdapterView.OnItemSelec
         itemName = findViewById(R.id.txtItemName);
         itemType = findViewById(R.id.spItem);
         location = findViewById(R.id.spLocation);
-        find = findViewById(R.id.btnFind);
-        cancel = findViewById(R.id.btnCancel);
+        Button find = findViewById(R.id.btnFind);
+        Button cancel = findViewById(R.id.btnCancel);
 
 
 

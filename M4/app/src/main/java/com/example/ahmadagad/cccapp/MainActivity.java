@@ -16,6 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -25,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button login;
     private Button registration;
-    public static ArrayList<User> users2;
-    DatabaseReference mData;
+    public static List<User> users2;
+    private DatabaseReference mData;
 
 
     @Override
