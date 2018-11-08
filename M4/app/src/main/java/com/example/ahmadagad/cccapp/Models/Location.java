@@ -66,7 +66,6 @@ public class Location {
      * @param key setter
      */
     public void setKey(int key) {
-        int key1 = key;
     }
 
     /**
@@ -208,7 +207,6 @@ public class Location {
      * @param website setter for website
      */
     public void setWebsite(String website) {
-        String website1 = website;
     }
 
     @Override

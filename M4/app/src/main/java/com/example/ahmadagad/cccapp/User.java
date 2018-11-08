@@ -19,7 +19,6 @@ class User {
         _username = username;
         _password = password;
         _userType = userType;
-        String _email = email;
     }
 
     /**

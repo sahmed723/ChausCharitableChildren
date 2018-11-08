@@ -24,6 +24,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -143,15 +144,15 @@ public class dashboard extends AppCompatActivity {
     /**
      * @return list of locations
      */
-    public static ArrayList<Location> getArray() {
-        return locations;
+    public static List<Location> getArray() {
+        return Collections.unmodifiableList(locations);
     }
 
     /**
-     * @return item list
+     * @return itemslist
      */
     public static Collection<item> getItemsList() {
-        return itemsList;
+        return Collections.unmodifiableList(itemsList);
     }
     private void getLocationData() {
         InputStream instream = getResources().openRawResource(R.raw.locationdata);

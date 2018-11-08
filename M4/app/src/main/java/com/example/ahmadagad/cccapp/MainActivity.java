@@ -16,6 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -31,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * @return getter for user
      */
-    public static List<User> getUsers2() {
-        return users2;
+    public static Iterable<User> getUsers2() {
+        return Collections.unmodifiableList(users2);
     }
 
 
