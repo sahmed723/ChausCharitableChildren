@@ -6,19 +6,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.ahmadagad.cccapp.Models.Location;
-
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import static com.example.ahmadagad.cccapp.dashboard.itemsList;
 
 
+/**
+ * main class
+ */
 public class results extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private ListView itemList3;
@@ -35,13 +36,13 @@ public class results extends AppCompatActivity implements AdapterView.OnItemSele
         cata = search.cat;
         nam = search.name;
 
-        ArrayList<item> newList = new ArrayList<>();
+        Collection<item> newList = new ArrayList<>();
 
         for (item i: itemsList) {
             newList.add(i);
         }
 
-        ArrayList<item> mainList = new ArrayList<>();
+        List<item> mainList = new ArrayList<>();
         ArrayList<String> sideList = new ArrayList<>();
 
         if (locat.equals("Location Name: All Locations")) {
@@ -109,12 +110,13 @@ public class results extends AppCompatActivity implements AdapterView.OnItemSele
 
 
         itemList3 = (ListView) findViewById(R.id.lvitemList);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, sideList);
+        ListAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,
+                sideList);
         itemList3.setAdapter(adapter);
 
 
 
-        final ArrayList<item> finalMainList = mainList;
+        final List<item> finalMainList = mainList;
         itemList3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

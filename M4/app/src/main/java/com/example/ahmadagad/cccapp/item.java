@@ -1,9 +1,8 @@
 package com.example.ahmadagad.cccapp;
 
-import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.TextView;
-
+/**
+ * main class
+ */
 public class item {
     String _time;
     public String _shortD;
@@ -11,7 +10,17 @@ public class item {
     String _value;
     String _itemType;
     String _location;
-    public item(String time, String shortD, String fullD, String value, String itemType, String location) {
+
+    /**
+     * @param time of item
+     * @param shortD of item
+     * @param fullD of item
+     * @param value of item
+     * @param itemType of item
+     * @param location of item
+     */
+    public item(String time, String shortD, String fullD, String value, String itemType,
+                String location) {
         _time = time;
         _shortD = shortD;
         _fullD = fullD;
@@ -20,6 +29,10 @@ public class item {
         _location = location;
 
     }
+
+    /**
+     * empty constructer
+     */
     public item() {
 
     }

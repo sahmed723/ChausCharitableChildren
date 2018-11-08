@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
+/**
+ * main class
+ */
 public class login extends AppCompatActivity {
 
     private EditText username;
@@ -62,6 +65,10 @@ public class login extends AppCompatActivity {
                 message.setText("Username or Password is incorrect! Try again.");
             }
         }
+
+    /**
+     * @return user Type
+     */
         public static String getUserType() {
             return userType;
         }

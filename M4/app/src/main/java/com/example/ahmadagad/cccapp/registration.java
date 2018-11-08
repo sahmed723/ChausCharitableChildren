@@ -1,8 +1,6 @@
 package com.example.ahmadagad.cccapp;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,16 +12,14 @@ import android.widget.Toast;
 import android.widget.Spinner;
 
 //import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+/**
+ * main class
+ */
 public class registration extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Button cancel;
@@ -42,7 +38,8 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
         assign();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.type,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.type,
+                android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         type.setAdapter(adapter);
         type.setOnItemSelectedListener(this);
@@ -57,7 +54,9 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
 
         create.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                User newUser = new User(username.getText().toString(), password.getText().toString(), type.getSelectedItem().toString(), email.getText().toString());
+                User newUser = new User(username.getText().toString(),
+                        password.getText().toString(),
+                        type.getSelectedItem().toString(), email.getText().toString());
                 //users.add(newUser);
                 mDatabase.child("User").child(username.getText().toString()).setValue(newUser);
 
@@ -77,6 +76,9 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+    /**
+     * @return list of users
+     */
     public static ArrayList<User> getUsers () {
         return MainActivity.users2;
     }

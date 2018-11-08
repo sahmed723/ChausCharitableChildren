@@ -1,6 +1,5 @@
 package com.example.ahmadagad.cccapp;
 
-import android.location.Geocoder;
 //import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -17,12 +16,9 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.CameraUpdate;
 
-
-import android.location.Address;
-import java.util.List;
-import android.content.Context;
-import java.io.IOException;
-
+/**
+ * main class
+ */
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -54,7 +50,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
         for (Location loc: dashboard.locations) {
             builder.include (new LatLng(loc.getLatitude(),loc.getLongitude()));
-            Marker test = mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)).position(new LatLng(loc.getLatitude(),loc.getLongitude())).title(loc.getName()).snippet("Phone Number: " + loc.getPhoneNumber()));
+            Marker test = mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.
+                    defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)).
+                    position(new LatLng(loc.getLatitude(),loc.getLongitude())).
+                    title(loc.getName()).snippet("Phone Number: " + loc.getPhoneNumber()));
 
         }
 

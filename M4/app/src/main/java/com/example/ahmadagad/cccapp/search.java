@@ -9,13 +9,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.example.ahmadagad.cccapp.Models.Location;
 
 import java.util.ArrayList;
 
 
+/**
+ * main class
+ */
 public class search extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
 
@@ -40,7 +42,8 @@ public class search extends AppCompatActivity implements AdapterView.OnItemSelec
 
 
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.Item2,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.Item2,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         itemType.setAdapter(adapter);
         itemType.setOnItemSelectedListener(this);

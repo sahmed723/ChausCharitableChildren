@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.ahmadagad.cccapp.Models.Location;
@@ -17,16 +18,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.List;
 
 
+/**
+ * main class
+ */
 public class dashboard extends AppCompatActivity {
 
 
@@ -36,7 +38,7 @@ public class dashboard extends AppCompatActivity {
     public static ArrayList<Location> locations;
     private ListView locationList;
     private String currentUser;
-    public static ArrayList<item> itemsList;
+    public static List<item> itemsList;
     DatabaseReference iData;
     private Button map;
 
@@ -99,7 +101,8 @@ public class dashboard extends AppCompatActivity {
         getLocationData();
 
         locationList = findViewById(R.id.locationList);
-        LocationListAdapter adapter = new LocationListAdapter(this, R.layout.layout_item_list, locations);
+        ListAdapter adapter = new LocationListAdapter(this, R.layout.layout_item_list,
+                locations);
         locationList.setAdapter(adapter);
 
         locationList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -136,6 +139,10 @@ public class dashboard extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * @return list of locations
+     */
     public static ArrayList<Location> getArray() {
         return locations;
     }

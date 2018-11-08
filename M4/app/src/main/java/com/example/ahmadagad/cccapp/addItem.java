@@ -9,11 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Spinner;
-import java.util.ArrayList;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
+/**
+ * main class
+ */
 public class addItem extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private TextView time;
@@ -42,14 +45,16 @@ public class addItem extends AppCompatActivity implements AdapterView.OnItemSele
         cancel = (Button) findViewById(R.id.btnCancel);
 
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.Item,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,R.array.Item,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         itemType.setAdapter(adapter);
         itemType.setOnItemSelectedListener(this);
 
         location.setOnItemSelectedListener(this);
 
-        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item, dashboard.getArray());
+        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,
+                dashboard.getArray());
 
         aa.setDropDownViewResource(
                 android.R.layout.simple_spinner_dropdown_item);
@@ -57,7 +62,10 @@ public class addItem extends AppCompatActivity implements AdapterView.OnItemSele
 
         add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                item newitem = new item(time.getText().toString(), shortD.getText().toString(),fullD.getText().toString(), value.getText().toString(), itemType.getSelectedItem().toString(),location.getSelectedItem().toString());
+                item newitem = new item(time.getText().toString(), shortD.getText().toString(),
+                        fullD.getText().toString(), value.getText().toString(),
+                        itemType.getSelectedItem().toString(),
+                        location.getSelectedItem().toString());
                 mDatabase.child("Items").child(shortD.getText().toString()).setValue(newitem);
                 Intent intent2 = new Intent(addItem.this, dashboard.class);
                 startActivity(intent2);
