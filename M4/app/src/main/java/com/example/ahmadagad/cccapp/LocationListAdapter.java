@@ -44,12 +44,12 @@ public class LocationListAdapter extends ArrayAdapter<Location> {
         String total = String.format("%s, %s, %s %s", address, city, state, zip);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        convertView = inflater.inflate(mResource, parent, false);
+        View convertView1 = inflater.inflate(mResource, parent, false);
 
-        nameView = (TextView) convertView.findViewById(R.id.locationName);
-        addressView = (TextView) convertView.findViewById(R.id.locationAddress);
+        nameView = convertView1.findViewById(R.id.locationName);
+        addressView = convertView1.findViewById(R.id.locationAddress);
         nameView.setText(name);
         addressView.setText(total);
-        return convertView;
+        return convertView1;
     }
 }

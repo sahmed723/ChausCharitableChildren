@@ -39,10 +39,10 @@ public class addItem extends AppCompatActivity implements AdapterView.OnItemSele
         shortD = (EditText)findViewById(R.id.txtShort);
         fullD = (EditText)findViewById(R.id.txtFull);
         value = (EditText)findViewById(R.id.txtValue);
-        itemType = (Spinner)findViewById(R.id.spItem);
-        location = (Spinner)findViewById(R.id.spLocation);
-        add = (Button) findViewById(R.id.btnAdd);
-        cancel = (Button) findViewById(R.id.btnCancel);
+        itemType = findViewById(R.id.spItem);
+        location = findViewById(R.id.spLocation);
+        add = findViewById(R.id.btnAdd);
+        cancel = findViewById(R.id.btnCancel);
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -61,6 +61,7 @@ public class addItem extends AppCompatActivity implements AdapterView.OnItemSele
         location.setAdapter(aa);
 
         add.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 item newitem = new item(time.getText().toString(), shortD.getText().toString(),
                         fullD.getText().toString(), value.getText().toString(),
@@ -72,6 +73,7 @@ public class addItem extends AppCompatActivity implements AdapterView.OnItemSele
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(addItem.this, dashboard.class);
                 startActivity(intent2);

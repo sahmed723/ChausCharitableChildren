@@ -29,7 +29,7 @@ public class tester extends AppCompatActivity {
             }
 
 
-                    usList = (ListView) findViewById(R.id.test);
+                    usList = findViewById(R.id.test);
                     ListAdapter adapter = new ArrayAdapter(this,
                             android.R.layout.simple_list_item_1, nList);
                     usList.setAdapter(adapter);

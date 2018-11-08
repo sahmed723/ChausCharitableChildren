@@ -54,8 +54,9 @@ public class dashboard extends AppCompatActivity {
 
         currentUser = login.getUserType();
 
-        map = (Button)findViewById(R.id.btnMap);
+        map = findViewById(R.id.btnMap);
         map.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 map.setEnabled(true);
                 Intent intent = new Intent(dashboard.this, MapsActivity.class);
@@ -63,9 +64,10 @@ public class dashboard extends AppCompatActivity {
             }
         });
 
-        search = (Button)findViewById(R.id.btnSearch);
+        search = findViewById(R.id.btnSearch);
 
         search.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 search.setEnabled(true);
                 Intent intent = new Intent(dashboard.this, search.class);
@@ -73,9 +75,10 @@ public class dashboard extends AppCompatActivity {
             }
         });
 
-        logout = (Button)findViewById(R.id.btnLogout);
+        logout = findViewById(R.id.btnLogout);
 
         logout.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 logout.setEnabled(true);
                 Intent intent = new Intent(dashboard.this, MainActivity.class);
@@ -83,13 +86,14 @@ public class dashboard extends AppCompatActivity {
             }
         });
 
-        add = (Button)findViewById(R.id.btnaddItem);
+        add = findViewById(R.id.btnaddItem);
         add.setEnabled(false);
         if(currentUser.equals("Location Employee") || currentUser.equals("Admin")) {
             add.setEnabled(true);
         }
 
         add.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(dashboard.this, addItem.class);
                 startActivity(intent2);
@@ -156,6 +160,7 @@ public class dashboard extends AppCompatActivity {
         String ln;
         try {
             reader.readLine();
+
             while ((ln = reader.readLine()) != null) {
                 String[] tokens = ln.split(",");
                 Location location = new Location();

@@ -34,11 +34,11 @@ public class search extends AppCompatActivity implements AdapterView.OnItemSelec
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        itemName = (EditText)findViewById(R.id.txtItemName);
-        itemType = (Spinner)findViewById(R.id.spItem);
-        location = (Spinner)findViewById(R.id.spLocation);
-        find = (Button)findViewById(R.id.btnFind);
-        cancel = (Button)findViewById(R.id.btnCancel);
+        itemName = findViewById(R.id.txtItemName);
+        itemType = findViewById(R.id.spItem);
+        location = findViewById(R.id.spLocation);
+        find = findViewById(R.id.btnFind);
+        cancel = findViewById(R.id.btnCancel);
 
 
 
@@ -60,6 +60,7 @@ public class search extends AppCompatActivity implements AdapterView.OnItemSelec
         location.setAdapter(aa);
 
         find.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 loc = location.getSelectedItem().toString();
                 cat = itemType.getSelectedItem().toString();
@@ -69,6 +70,7 @@ public class search extends AppCompatActivity implements AdapterView.OnItemSelec
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(search.this, dashboard.class);
                 startActivity(intent2);

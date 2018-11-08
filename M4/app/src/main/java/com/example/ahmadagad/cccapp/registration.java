@@ -45,6 +45,7 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
         type.setOnItemSelectedListener(this);
 
         cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 cancel.setEnabled(true);
                 Intent intent = new Intent(registration.this, MainActivity.class);
@@ -53,6 +54,7 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
         });
 
         create.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 User newUser = new User(username.getText().toString(),
                         password.getText().toString(),
@@ -67,12 +69,12 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void assign(){
-        username = (EditText)findViewById(R.id.etName);
-        email = (EditText)findViewById(R.id.etEmail);
-        password = (EditText)findViewById(R.id.etPass);
-        cancel = (Button)findViewById(R.id.btnCancel);
-        create = (Button)findViewById(R.id.btnCreate);
-        type = (Spinner)findViewById(R.id.spType);
+        username = findViewById(R.id.etName);
+        email = findViewById(R.id.etEmail);
+        password = findViewById(R.id.etPass);
+        cancel = findViewById(R.id.btnCancel);
+        create = findViewById(R.id.btnCreate);
+        type = findViewById(R.id.spType);
 
     }
 

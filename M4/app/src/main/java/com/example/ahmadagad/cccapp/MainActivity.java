@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
         mData = FirebaseDatabase.getInstance().getReference("User");
 
-        login = (Button)findViewById(R.id.btnLogin);
-        registration = (Button)findViewById(R.id.btnRegistration);
+        login = findViewById(R.id.btnLogin);
+        registration = findViewById(R.id.btnRegistration);
         mData.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         login.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 login.setEnabled(true);
                 Intent intent = new Intent(MainActivity.this, login.class);
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         registration.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 registration.setEnabled(true);
                 Intent intent = new Intent(MainActivity.this, registration.class);

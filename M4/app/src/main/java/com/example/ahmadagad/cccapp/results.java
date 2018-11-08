@@ -38,9 +38,7 @@ public class results extends AppCompatActivity implements AdapterView.OnItemSele
 
         Collection<item> newList = new ArrayList<>();
 
-        for (item i: itemsList) {
-            newList.add(i);
-        }
+        newList.addAll(itemsList);
 
         List<item> mainList = new ArrayList<>();
         ArrayList<String> sideList = new ArrayList<>();
@@ -61,9 +59,7 @@ public class results extends AppCompatActivity implements AdapterView.OnItemSele
 
         newList = new ArrayList<>();
 
-        for (item i: mainList) {
-            newList.add(i);
-        }
+        newList.addAll(mainList);
 
         mainList = new ArrayList<>();
         sideList = new ArrayList<>();
@@ -86,9 +82,7 @@ public class results extends AppCompatActivity implements AdapterView.OnItemSele
 
         newList = new ArrayList<>();
 
-        for (item i: mainList) {
-            newList.add(i);
-        }
+        newList.addAll(mainList);
 
         mainList = new ArrayList<>();
         sideList = new ArrayList<>();
@@ -109,7 +103,7 @@ public class results extends AppCompatActivity implements AdapterView.OnItemSele
         }
 
 
-        itemList3 = (ListView) findViewById(R.id.lvitemList);
+        itemList3 = findViewById(R.id.lvitemList);
         ListAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,
                 sideList);
         itemList3.setAdapter(adapter);

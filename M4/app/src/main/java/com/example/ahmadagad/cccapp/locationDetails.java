@@ -60,7 +60,7 @@ public class locationDetails extends AppCompatActivity {
                 }
             }
 
-                    itemList2 = (ListView) findViewById(R.id.itemList);
+                    itemList2 = findViewById(R.id.itemList);
                     ListAdapter adapter = new ArrayAdapter(this,
                             android.R.layout.simple_list_item_1, mainArray);
                     itemList2.setAdapter(adapter);

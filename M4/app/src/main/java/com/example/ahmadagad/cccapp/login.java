@@ -26,20 +26,22 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        username = (EditText)findViewById(R.id.etUsername);
-        password = (EditText)findViewById(R.id.etPassword);
-        login = (Button)findViewById(R.id.btnLogin);
-        cancel = (Button)findViewById(R.id.btnCancel);
-        message = (TextView)findViewById(R.id.tvMessage);
+        username = findViewById(R.id.etUsername);
+        password = findViewById(R.id.etPassword);
+        login = findViewById(R.id.btnLogin);
+        cancel = findViewById(R.id.btnCancel);
+        message = findViewById(R.id.tvMessage);
         message.setText("Please enter your Username and Password.");
 
         login.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 checkUser(username.getText().toString(), password.getText().toString());
             }
         });
 
         cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 cancel.setEnabled(true);
                 Intent intentCancel = new Intent(login.this, MainActivity.class);
