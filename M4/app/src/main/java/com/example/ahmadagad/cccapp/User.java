@@ -7,6 +7,7 @@ class User {
     private String _username;
     private String _password;
     private String _userType;
+    private String _email;
 
     /**
      * @param username of user
@@ -19,6 +20,7 @@ class User {
         _username = username;
         _password = password;
         _userType = userType;
+        _email = email;
     }
 
     /**

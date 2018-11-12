@@ -145,7 +145,7 @@ public class dashboard extends AppCompatActivity {
      * @return list of locations
      */
     public static List<Location> getArray() {
-        return Collections.unmodifiableList(locations);
+        return locations;
     }
 
     /**

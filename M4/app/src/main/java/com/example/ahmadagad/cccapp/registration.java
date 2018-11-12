@@ -1,19 +1,20 @@
 package com.example.ahmadagad.cccapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 import android.widget.Spinner;
+import android.widget.TextView;
 
-//import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+//import com.google.firebase.FirebaseApp;
 
 /**
  * main class
@@ -25,6 +26,7 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
     private EditText username;
     private EditText email;
     private EditText password;
+    private TextView mess;
     private Spinner type;
     private DatabaseReference mDatabase;
 
@@ -54,13 +56,16 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User newUser = new User(username.getText().toString(),
-                        password.getText().toString(),
-                        type.getSelectedItem().toString(), email.getText().toString());
-                //users.add(newUser);
-                mDatabase.child("User").child(username.getText().toString()).setValue(newUser);
-
-                startActivity(new Intent(registration.this, MainActivity.class));
+                boolean check = validate();
+                if (!check) {
+                    User newUser = new User(username.getText().toString(),
+                            password.getText().toString(),
+                            type.getSelectedItem().toString(), email.getText().toString());
+                    //users.add(newUser);
+                    mDatabase.child("User").child(username.getText().toString()).setValue(newUser);
+                    mess.setText("User Created!");
+                    startActivity(new Intent(registration.this, MainActivity.class));
+                }
             }
         });
 
@@ -73,6 +78,7 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
         cancel = findViewById(R.id.btnCancel);
         create = findViewById(R.id.btnCreate);
         type = findViewById(R.id.spType);
+        mess = findViewById(R.id.tvMess);
 
     }
 
@@ -86,25 +92,28 @@ public class registration extends AppCompatActivity implements AdapterView.OnIte
 // --Commented out by Inspection STOP (11/8/18, 12:39 PM)
 
 // --Commented out by Inspection START (11/8/18, 12:39 PM):
-//    private boolean validate(){
-//        Boolean result = false;
-//        String name = username.getText().toString();
-//        String em = email.getText().toString();
-//        String pass = password.getText().toString();
-//
-//        if (name.isEmpty() || em.isEmpty() || pass.isEmpty()) {
-//            Toast.makeText(this,"Please fill in all the information", Toast.LENGTH_SHORT).show();
-//        } else {
-//            result = true;
-//        }
-//        return result;
-//    }
+    private boolean validate(){
+        String name = username.getText().toString();
+        String em = email.getText().toString();
+        String pass = password.getText().toString();
+
+        if (name.isEmpty() || em.isEmpty() || pass.isEmpty()) {
+            mess.setText("Please fill in all the information!");
+            return true;
+        } else if (!em.contains("@")){
+            mess.setText("Email is missing \'@\' symbol!");
+            return  true;
+        } else if (pass.length() < 5) {
+            mess.setText("Password needs to be atleast 5 characters!");
+            return true;
+        }
+        return false;
+    }
 // --Commented out by Inspection STOP (11/8/18, 12:39 PM)
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+
     }
 
     @Override

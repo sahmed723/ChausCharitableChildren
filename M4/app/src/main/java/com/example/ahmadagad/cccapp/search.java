@@ -70,7 +70,7 @@ public class search extends AppCompatActivity implements AdapterView.OnItemSelec
         location.setOnItemSelectedListener(this);
         Location allLocation = new Location();
         allLocation.setName("All Locations");
-        ArrayList<Location> newArray = dashboard.getArray();
+        ArrayList<Location> newArray = (ArrayList<Location>) dashboard.getArray();
         newArray.add(0, allLocation);
         ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item, newArray);
 
