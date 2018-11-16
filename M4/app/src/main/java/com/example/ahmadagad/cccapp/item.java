@@ -4,12 +4,12 @@ package com.example.ahmadagad.cccapp;
  * main class
  */
 class item {
-    String _time;
-    String _shortD;
-    String _fullD;
-    String _value;
-    String _itemType;
-    String _location;
+    public String _time;
+    public String _shortD;
+    public String _fullD;
+    public String _value;
+    public String _itemType;
+    public String _location;
 
     /**
      * @param time of item

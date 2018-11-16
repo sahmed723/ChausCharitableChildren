@@ -63,6 +63,7 @@ public class login extends AppCompatActivity {
                     startActivity(intentDashboard);
                 }
             }
+
             if (!match) {
                 message.setText("Username or Password is incorrect! Try again.");
             }

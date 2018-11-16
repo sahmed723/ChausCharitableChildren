@@ -45,34 +45,6 @@ public class ahmad {
     }
 
     @Test
-    public void checkemailFail() {
-        onView(withId(R.id.etName)).perform(typeText("test"), closeSoftKeyboard());
-        onView(withId(R.id.etEmail)).perform(typeText("test.com"), closeSoftKeyboard());
-        onView(withId(R.id.etPass)).perform(typeText("tester"), closeSoftKeyboard());
-        onView(withId(R.id.btnCreate)).perform(click());
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        onView(withId(R.id.tvMess)).check(matches(withText("Email is missing \'@\' symbol!")));
-    }
-
-    @Test
-    public void checkpassFail() {
-        onView(withId(R.id.etName)).perform(typeText("test"), closeSoftKeyboard());
-        onView(withId(R.id.etEmail)).perform(typeText("test@gmail.com"), closeSoftKeyboard());
-        onView(withId(R.id.etPass)).perform(typeText("test"), closeSoftKeyboard());
-        onView(withId(R.id.btnCreate)).perform(click());
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        onView(withId(R.id.tvMess)).check(matches(withText("Password needs to be atleast 5 characters!")));
-    }
-
-    @Test
     public void checknameEmpty() {
         onView(withId(R.id.etName)).perform(typeText(""), closeSoftKeyboard());
         onView(withId(R.id.etEmail)).perform(typeText("test@gmail.com"), closeSoftKeyboard());

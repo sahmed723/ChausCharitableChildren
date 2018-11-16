@@ -36,8 +36,8 @@ public class dashboard extends AppCompatActivity {
 
     private Button logout;
     private Button search;
-    private static ArrayList<Location> locations;
-    private static List<item> itemsList;
+    public static ArrayList<Location> locations;
+    public static List<item> itemsList;
     private Button map;
 
 
